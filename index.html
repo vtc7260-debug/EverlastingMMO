@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EverlastingMMO - Thuê Box Phone Cloud</title>
+    <style>
+        :root {
+            --bg-sidebar: #0f172a;
+            --bg-main: #060b18;
+            --bg-card: #1e293b;
+            --primary-blue: #3b82f6;
+            --neon-blue: #00d2ff;
+            --text-gray: #94a3b8;
+            --border: #334155;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: white;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar bên trái giống MaxCloudPhone */
+        .sidebar {
+            width: 260px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100vh;
+        }
+
+        .sidebar-header {
+            padding: 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .menu-list { padding: 20px 0; flex-grow: 1; }
+        .menu-item {
+            padding: 12px 25px;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+        .menu-item:hover, .menu-item.active {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--neon-blue);
+            border-left: 4px solid var(--neon-blue);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 260px;
+            flex: 1;
+            padding: 30px;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            background: var(--bg-sidebar);
+            padding: 15px 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        /* Lưới thiết bị Box Phone */
+        .device-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .device-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+            position: relative;
+        }
+        .device-card:hover {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #064e3b;
+            color: #10b981;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .device-img {
+            width: 100%;
+            height: 180px;
+            background: #0f172a;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+        }
+
+        .device-info h3 { margin: 0 0 10px 0; font-size: 18px; }
+        .specs {
+            color: var(--text-gray);
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .price-tag {
+            font-size: 20px;
+            color: #4ade80;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .btn-rent {
+            width: 100%;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-rent:hover { background: var(--neon-blue); }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: var(--text-gray);
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="sidebar-header">⚡ EverlastingMMO</div>
+        <div class="menu-list">
+            <div class="menu-item active">🏠 Cửa hàng thuê</div>
+            <div class="menu-item">📱 Quản lý thiết bị</div>
+            <div class="menu-item">💰 Nạp tiền</div>
+            <div class="menu-item">🔗 Tiếp thị liên kết</div>
+            <div class="menu-item">📞 Hỗ trợ kỹ thuật</div>
+        </div>
+        <div style="padding: 20px; font-size: 12px; color: var(--text-gray);">
+            Hotline: 0818.847.772
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="header-top">
+            <div><strong>Chào mừng quay trở lại!</strong></div>
+            <div style="color: var(--neon-blue);">Số dư: 0.00 đ</div>
+        </div>
+
+        <h1>Cửa hàng cho thuê Box Phone</h1>
+        <p style="color: var(--text-gray); margin-bottom: 30px;">Hệ thống điện thoại đám mây tự động hóa số 1.</p>
+
+        <div class="device-grid">
+            <div class="device-card">
+                <span class="status-badge">Sẵn sàng</span>
+                <div class="device-img">📱</div>
+                <div class="device-info">
+                    <h3>Samsung Galaxy S7</h3>
+                    <div class="specs">
+                        ● CPU: 8 Core / RAM: 4GB<br>
+                        ● Android 7.1 / Độ bền cao<br>
+                        ● Phù hợp: Treo game, nuôi acc
+                    </div>
+                    <span class="price-tag">3.000đ / ngày</span>
+                    <button class="btn-rent" onclick="location.href='https://zalo.me/0818847772'">Thuê ngay</button>
+                </div>
+            </div>
+
+            <div class="device-card">
+                <span class="status-badge">Sẵn sàng</span>
+                <div class="device-img">📱</div>
+                <div class="device-info">
+                    <h3>Samsung Galaxy A6</h3>
+                    <div class="specs">
+                        ● CPU: 8 Core / RAM: 3GB<br>
+                        ● Android 9.0 / Ổn định<br>
+                        ● Phù hợp: Chạy app, proxy
+                    </div>
+                    <span class="price-tag">2.500đ / ngày</span>
+                    <button class="btn-rent" onclick="location.href='https://zalo.me/0818847772'">Thuê ngay</button>
+                </div>
+            </div>
+
+            <div class="device-card">
+                <span class="status-badge" style="background:#450a0a; color:#f87171;">Hết hàng</span>
+                <div class="device-img">📱</div>
+                <div class="device-info">
+                    <h3>Samsung Note 8</h3>
+                    <div class="specs">
+                        ● CPU: 8 Core / RAM: 6GB<br>
+                        ● Màn hình lớn / Hiệu năng cao<br>
+                        ● Phù hợp: Đồ họa, MMO nặng
+                    </div>
+                    <span class="price-tag">5.000đ / ngày</span>
+                    <button class="btn-rent" style="background: #475569; cursor: not-allowed;">Hết hàng</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            © 2026 EverlastingMMO | Giải pháp Box Phone chuyên nghiệp
+        </footer>
+    </div>
+
+</body>
+</html>
